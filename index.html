@@ -1,396 +1,119 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Thanh Dinh | Information Technology Student</title>
-    <meta name="author" content="Thanh Dinh">
-    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Dinh - IT Student</title>
     <style>
-      :root {
-        --primary-color: #4a6fa5;
-        --secondary-color: #166088;
-        --text-color: #333;
-        --bg-color: #f9f9f9;
-        --card-bg: #fff;
-        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        --transition: all 0.3s ease;
-      }
-      
-      [data-theme="dark"] {
-        --primary-color: #6b8cae;
-        --secondary-color: #4a6fa5;
-        --text-color: #f0f0f0;
-        --bg-color: #121212;
-        --card-bg: #1e1e1e;
-        --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-      }
-      
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      
-      body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.6;
-        color: var(--text-color);
-        background-color: var(--bg-color);
-        transition: var(--transition);
-      }
-      
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-      
-      header {
-        padding: 40px 0;
-        text-align: center;
-      }
-      
-      .profile-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-        margin-bottom: 40px;
-      }
-      
-      @media (min-width: 768px) {
-        .profile-container {
-          flex-direction: row;
-          align-items: flex-start;
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background-color: #f5f5f5;
         }
-      }
-      
-      .profile-text {
-        flex: 1;
-      }
-      
-      .profile-image {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 5px solid var(--primary-color);
-        box-shadow: var(--shadow);
-        transition: var(--transition);
-      }
-      
-      .profile-image:hover {
-        transform: scale(1.05);
-      }
-      
-      h1, h2, h3 {
-        color: var(--primary-color);
-        margin-bottom: 15px;
-      }
-      
-      h1 {
-        font-size: 2.5rem;
-        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        display: inline-block;
-      }
-      
-      h2 {
-        font-size: 1.8rem;
-        border-bottom: 2px solid var(--primary-color);
-        padding-bottom: 10px;
-        margin-top: 30px;
-      }
-      
-      p {
-        margin-bottom: 15px;
-        font-size: 1.1rem;
-      }
-      
-      a {
-        color: var(--secondary-color);
-        text-decoration: none;
-        transition: var(--transition);
-        font-weight: 500;
-      }
-      
-      a:hover {
-        color: var(--primary-color);
-        text-decoration: underline;
-      }
-      
-      .social-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-        margin: 20px 0;
-        justify-content: center;
-      }
-      
-      .social-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 5px;
-        padding: 8px 15px;
-        background-color: var(--primary-color);
-        color: white !important;
-        border-radius: 50px;
-        text-decoration: none !important;
-        transition: var(--transition);
-      }
-      
-      .social-link:hover {
-        background-color: var(--secondary-color);
-        transform: translateY(-3px);
-        text-decoration: none !important;
-      }
-      
-      .section {
-        background-color: var(--card-bg);
-        border-radius: 10px;
-        padding: 30px;
-        margin-bottom: 30px;
-        box-shadow: var(--shadow);
-        transition: var(--transition);
-      }
-      
-      .section:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      }
-      
-      .theme-toggle {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background-color: var(--primary-color);
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        box-shadow: var(--shadow);
-        border: none;
-        transition: var(--transition);
-        z-index: 100;
-      }
-      
-      .theme-toggle:hover {
-        background-color: var(--secondary-color);
-        transform: scale(1.1);
-      }
-      
-      .projects-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 20px;
-        margin-top: 20px;
-      }
-      
-      .project-card {
-        background-color: var(--card-bg);
-        border-radius: 8px;
-        padding: 20px;
-        box-shadow: var(--shadow);
-        transition: var(--transition);
-      }
-      
-      .project-card:hover {
-        transform: translateY(-5px);
-      }
-      
-      .project-card h3 {
-        margin-bottom: 10px;
-      }
-      
-      .project-card p {
-        font-size: 0.9rem;
-        margin-bottom: 15px;
-      }
-      
-      .project-links {
-        display: flex;
-        gap: 10px;
-      }
-      
-      .project-link {
-        font-size: 0.8rem;
-        padding: 5px 10px;
-        background-color: var(--primary-color);
-        color: white !important;
-        border-radius: 5px;
-      }
-      
-      footer {
-        text-align: center;
-        padding: 20px;
-        margin-top: 50px;
-        font-size: 0.9rem;
-        color: var(--text-color);
-      }
-      
-      .typing-effect {
-        display: inline-block;
-        overflow: hidden;
-        border-right: 3px solid var(--primary-color);
-        white-space: nowrap;
-        margin: 0 auto;
-        letter-spacing: 2px;
-        animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
-      }
-      
-      @keyframes typing {
-        from { width: 0 }
-        to { width: 100% }
-      }
-      
-      @keyframes blink-caret {
-        from, to { border-color: transparent }
-        50% { border-color: var(--primary-color); }
-      }
-      
-      .highlight {
-        background: linear-gradient(120deg, rgba(74, 111, 165, 0.3), rgba(74, 111, 165, 0.3));
-        background-repeat: no-repeat;
-        background-size: 100% 30%;
-        background-position: 0 88%;
-      }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #2980b9;
+            margin-top: 30px;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        @media (min-width: 600px) {
+            .profile {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+        }
+        
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+            border: 4px solid #3498db;
+        }
+        
+        .social-links {
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+        }
+        
+        .social-links a {
+            margin: 0 10px;
+        }
+        
+        .highlight {
+            background-color: #fffacd;
+            padding: 0 3px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
     </style>
-  </head>
-
-  <body>
-    <div class="container">
-      <header>
-        <h1 class="typing-effect">Thanh Dinh</h1>
-        <p>Information Technology Student at York University</p>
-      </header>
-      
-      <div class="profile-container">
-        <div class="profile-text">
-          <div class="section">
-            <h2>About Me</h2>
+</head>
+<body>
+    <h1>Thanh Dinh</h1>
+    <h2>Information Technology Student at York University</h2>
+    
+    <div class="profile">
+        <img src="MyFace.png" alt="Thanh Dinh" class="profile-pic">
+        <div>
             <p>Hi there!!! I'm a freshman at <a href="https://www.yorku.ca/">York University</a>, where I have a chance to follow my passion in IT, get in touch to new technology, or knowledge that I never thought about.</p>
             <p>In York University, I'm currently enrolled in <a href="https://futurestudents.yorku.ca/program/information-technology">Information Technology</a> program, which is my most favorite program at all time, since I got a chance to get in touch with IT (which I passionate about) and together with Business (which is also top 1 of my favorite). Currently, I'm still a freshman and probably doesn't have any skills related to IT right now, but I promised to myself that I'll be master in IT, and start my own IT related business one day.😁</p>
-            <p>For example, my step 1 is that after I finish this semester, I'll start my Summer challenge by start study some courses on <a href="https://www.udemy.com/">Udemy</a>, and create some project, and then get my profile ready to apply for an Internship. Yayyy! And btw, I'm actually listed some of the courses that I want to take already, <a href="https://www.udemy.com/home/my-courses/wishlist/">Here it is!!!</a>, feel free to purchase that for me 😍</p>
-            
-            <div class="social-links">
-              <a href="mailto:taidnh.work@gmail.com" class="social-link"><i class="fas fa-envelope"></i> Email</a>
-              <a href="https://www.facebook.com/profile.php?id=100034427109915" class="social-link"><i class="fab fa-facebook-f"></i> Facebook</a>
-              <a href="https://www.instagram.com/tkzsx_14/" class="social-link"><i class="fab fa-instagram"></i> Instagram</a>
-              <a href="https://github.com/thanhzkda" class="social-link"><i class="fab fa-github"></i> Github</a>
-              <a href="https://www.linkedin.com/in/th%C3%A0nh-%C4%91inh-309167317/" class="social-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-            </div>
-          </div>
         </div>
-        
-        <div class="profile-image-container">
-          <img src="MyFace.png" alt="Thanh Dinh" class="profile-image">
-        </div>
-      </div>
-      
-      <div class="section">
-        <h2>More About Me</h2>
-        <p>Ok, now we get in the detail, personally, I think that I am a bit lazy 🤐, unmotivated (sometimes only), and introverted. I tend to leave everything till the deadline yet start doing it, feelling want to change my self (be an expert at something) then laid on bed and dreaming, and feels like I need networking but my introvert self say: "Nope, I'm to shy for that".</p>
-        <p>However, among those bad (extremely bad I mean), I still have a good side tho... I tend to think that I'm a good guy.. I "probably" do a lot of good things, and thinking for the others ( I don't know how to explain to you but wait till you be my friends then, or ar least meet me in person 👋🏼 ). Uhh, I think I talk too much, and I haven't tell you about my age, or full name or sum, lol.</p>
-        <p>So yea. My full name is <span class="highlight">Viet Hoang Thanh Dinh</span>, I'm <span class="highlight">2005 (19 years old)</span>, and I originally born in <span class="highlight">VietNam</span>, but I moved here to study High School program since 14. And now I'm here, introduce myself to you !!</p>
-      </div>
-      
-      <div class="section">
-        <h2>Future Projects</h2>
-        <p>I'm just starting my journey in IT, but here are some projects I plan to work on:</p>
-        
-        <div class="projects-grid">
-          <div class="project-card">
-            <h3>Personal Portfolio Website</h3>
-            <p>This website! I'll continue improving it as I learn more web development skills.</p>
-            <div class="project-links">
-              <a href="#" class="project-link">Coming Soon</a>
-            </div>
-          </div>
-          
-          <div class="project-card">
-            <h3>First Web App</h3>
-            <p>After completing my Udemy courses, I'll build my first interactive web application.</p>
-            <div class="project-links">
-              <a href="#" class="project-link">Coming Soon</a>
-            </div>
-          </div>
-          
-          <div class="project-card">
-            <h3>Business Idea</h3>
-            <p>Working on combining IT and business knowledge to create something valuable.</p>
-            <div class="project-links">
-              <a href="#" class="project-link">Coming Soon</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <footer>
-        <p>Feel free to use this website's design as inspiration. <strong>Do not</strong> scrape the HTML directly.</p>
-        <p>Original design inspiration from <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron</a> and <a href="https://github.com/leonidk/new_website">Leonid Keselman</a>.</p>
-      </footer>
     </div>
     
-    <button class="theme-toggle" id="themeToggle">
-      <i class="fas fa-moon"></i>
-    </button>
+    <div class="social-links">
+        <a href="mailto:taidnh.work@gmail.com">Email</a> |
+        <a href="https://www.facebook.com/profile.php?id=100034427109915">Facebook</a> |
+        <a href="https://www.instagram.com/tkzsx_14/">Instagram</a> |
+        <a href="https://github.com/thanhzkda">Github</a> |
+        <a href="https://www.linkedin.com/in/th%C3%A0nh-%C4%91inh-309167317/">LinkedIn</a>
+    </div>
     
-    <script>
-      // Theme toggle functionality
-      const themeToggle = document.getElementById('themeToggle');
-      const icon = themeToggle.querySelector('i');
-      
-      // Check for saved theme preference or use preferred color scheme
-      const currentTheme = localStorage.getItem('theme') || 
-                         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      
-      // Apply the current theme
-      if (currentTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        icon.classList.replace('fa-moon', 'fa-sun');
-      }
-      
-      // Theme toggle button event
-      themeToggle.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        
-        if (currentTheme === 'dark') {
-          document.documentElement.removeAttribute('data-theme');
-          localStorage.setItem('theme', 'light');
-          icon.classList.replace('fa-sun', 'fa-moon');
-        } else {
-          document.documentElement.setAttribute('data-theme', 'dark');
-          localStorage.setItem('theme', 'dark');
-          icon.classList.replace('fa-moon', 'fa-sun');
-        }
-      });
-      
-      // Animation for sections when they come into view
-      const sections = document.querySelectorAll('.section');
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = 1;
-            entry.target.style.transform = 'translateY(0)';
-          }
-        });
-      }, { threshold: 0.1 });
-      
-      sections.forEach(section => {
-        section.style.opacity = 0;
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(section);
-      });
-    </script>
-  </body>
+    <h2>More About Me</h2>
+    <p>Ok, now we get in the detail, personally, I think that I am a bit lazy 🤐, unmotivated (sometimes only), and introverted. I tend to leave everything till the deadline yet start doing it, feelling want to change my self (be an expert at something) then laid on bed and dreaming, and feels like I need networking but my introvert self say: "Nope, I'm to shy for that".</p>
+    <p>However, among those bad (extremely bad I mean), I still have a good side tho... I tend to think that I'm a good guy.. I "probably" do a lot of good things, and thinking for the others ( I don't know how to explain to you but wait till you be my friends then, or ar least meet me in person 👋🏼 ). Uhh, I think I talk too much, and I haven't tell you about my age, or full name or sum, lol.</p>
+    <p>So yea. My full name is <span class="highlight">Viet Hoang Thanh Dinh</span>, I'm <span class="highlight">2005 (19 years old)</span>, and I originally born in <span class="highlight">VietNam</span>, but I moved here to study High School program since 14. And now I'm here, introduce myself to you !!</p>
+    
+    <h2>My Learning Plan</h2>
+    <p>For example, my step 1 is that after I finish this semester, I'll start my Summer challenge by start study some courses on <a href="https://www.udemy.com/">Udemy</a>, and create some project, and then get my profile ready to apply for an Internship. Yayyy! And btw, I'm actually listed some of the courses that I want to take already, <a href="https://www.udemy.com/home/my-courses/wishlist/">Here it is!!!</a>, feel free to purchase that for me 😍</p>
+    
+    <footer>
+        <p>This website was made by me as I'm learning HTML. Feel free to get inspired by the code!</p>
+    </footer>
+</body>
 </html>
